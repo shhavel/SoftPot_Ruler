@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="col-sm-offset-4">
+      <h1>CHARACTERISTICS</h1>
+      <h2>Measurements</h2>
+      <h3>T-Shirt</h3>
+      <br/>
+      <% if params[:center_back_length] && !params[:center_back_length].empty? || params[:chest] && !params[:chest].empty? %>
+        You entered
+        <ul>
+        <% if params[:center_back_length] && !params[:center_back_length].empty? %>
+          <li>Center Back Length: <b><%= params[:center_back_length] %> inches</b></li>
+        <% end %>
+        <% if params[:chest] && !params[:chest].empty? %>
+          <li>Chest: <b><%= params[:chest] %> inches</b></li>
+        <% end %>
+        </ul>
+        <br/>
+      <% end %>
+    </div>
+    <form class="form-horizontal" method="POST">
+      <div class="form-group">
+        <label for="center_back_length" class="col-sm-4 control-label">Center Back Length (Inches) (1-60)</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="center_back_length" name="center_back_length" style="width: 100px;" autofocus="true">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="chest" class="col-sm-4 control-label">Chest (Inches) (5-60)</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="chest" name="chest" style="width: 100px;">
+        </div>
+      </div>
+      <div class="form-group" style="padding-top: 40px;">
+        <div class="col-sm-offset-4 col-sm-10">
+          <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
