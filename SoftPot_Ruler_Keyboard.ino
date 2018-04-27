@@ -23,7 +23,9 @@ void loop() {
 
       float l = RULER_OFFSET + (d / 10);
 
+      Serial.println("d = " + String(d));
       Serial.println(String(l) + " inches"); // debug
+      Serial.println();
 
       Keyboard.print(l);
     }
